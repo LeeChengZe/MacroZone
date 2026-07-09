@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MacroZone",
-    "slug": "MacroZone",
+    "slug": "macrozone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -39,6 +39,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a7d09192-efa0-4b4b-b4e3-69223eb19f65"
+      }
+    },
+    "owner": "cheng03"
   }
 }
