@@ -5,7 +5,10 @@ import { getMeals, Meal } from '@/storage/meals';
 import { globalStyles } from '@/styles/global';
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import ShareButton from '@/components/ShareButton';
+import CopyButton from '@/components/CopyButton';
+import ReminderToggle from '@/components/ReminderToggle';
 
 export default function HomeScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
@@ -24,10 +27,15 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={globalStyles.container}>
-      <Text style={globalStyles.title}>MacroZone</Text>
+      <View style={globalStyles.header}>
+        <Text style={globalStyles.title}>MacroZone</Text>
+        <ShareButton meals={meals} />
+      </View>
       <HomeHeader />
-      <MacroGrid />
-      <RecentMeals meals={meals} />
+      <MacroGrid meals ={meals}/>
+      <CopyButton meals={meals} />
+      <ReminderToggle />
+      <RecentMeals meals={meals} onDelete={loadMeals} />
     </ScrollView>
   );
 }
