@@ -8,7 +8,7 @@ import { useCallback, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import ShareButton from '@/components/ShareButton';
 import CopyButton from '@/components/CopyButton';
-// import ReminderToggle from '@/components/ReminderToggle';
+import ReminderToggle from '@/components/ReminderToggle';
 import { Platform } from 'react-native';
 
 export default function HomeScreen() {
